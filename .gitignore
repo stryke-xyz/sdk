@@ -36,3 +36,5 @@ coverage/
 
 # Test output
 *.test.ts.snap
+
+dist

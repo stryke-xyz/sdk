@@ -1,5 +1,5 @@
 {
-  "name": "@stryke/sdk",
+  "name": "@stryke-xyz/sdk",
   "version": "1.0.0",
   "description": "Stryke SDK for decentralized options and AMM integrations.",
   "main": "dist/index.js",
