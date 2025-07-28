@@ -1,9 +1,10 @@
 {
   "name": "@stryke-xyz/sdk",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Stryke SDK for decentralized options and AMM integrations.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "build:major": "./scripts/bump-version.sh --type major",
