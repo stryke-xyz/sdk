@@ -1,0 +1,8 @@
+export declare const UNISWAP_V3_NAME = "Uniswap V3";
+export declare const UNISWAP_V3_NAME_ID = "uniswap-v3";
+export declare const SUSHISWAP_V3_NAME = "Sushiswap V3";
+export declare const SUSHISWAP_V3_NAME_ID = "sushiswap-v3";
+export declare const PANCAKESWAP_V3_NAME = "Pancakeswap V3";
+export declare const PANCAKESWAP_V3_NAME_ID = "pancakeswap-v3";
+export declare const KODIAK_NAME = "Kodiak";
+export declare const KODIAK_NAME_ID = "kodiak";

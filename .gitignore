@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Build output
+# dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.*
+
+# Mac system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Coverage reports
+coverage/
+
+# Misc
+*.log
+*.tgz
+
+# IDE files
+.idea/
+*.swp
+
+# Test output
+*.test.ts.snap

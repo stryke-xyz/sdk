@@ -1,0 +1,10 @@
+export const ETH = 'ETH';
+export const USDC = 'USDC';
+export const USD = 'USD';
+export const WETH = 'WETH';
+export const WBTC = 'BTC';
+export const BERA = 'BERA';
+export const BOOP = 'BOOP';
+export const ARB = 'ARB';
+export const HONEY = 'HONEY';
+export const SONIC = 'S';

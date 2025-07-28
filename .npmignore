@@ -1,0 +1,8 @@
+src/
+scripts/
+README.md
+tsconfig.json
+.gitignore
+.vscode/
+node_modules/
+package-lock.json
