@@ -1,6 +1,25 @@
 import { AMM, Hook } from "../../types/types";
 
 export type Api = {
+  "v1/deposit/history": {
+    action: "deposit" | "withdraw";
+    chain: string;
+    blockNumber: string;
+    transactionHash: string;
+    date: string;
+    amount0: number;
+    amount1: number;
+    amm: AMM;
+    hook: { address: string };
+    handler: { address: string };
+    range: {
+      min: number;
+      max: number;
+    };
+    meta: {
+      liquidity: string;
+    };
+  }[];
   "v1/prices": Record<string, number>;
   "v1/markets": {
     index: number;
