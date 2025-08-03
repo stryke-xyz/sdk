@@ -6,6 +6,9 @@ export * from "./liquidity-amount-math";
 export * from "./tick-math";
 export * from "./getMarket";
 
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
+
+
 export function getHookData({
   address,
   chainId,
@@ -15,7 +18,6 @@ export function getHookData({
 }) {
   return HOOKS.find(
     (hook) =>
-      hook.address.toLowerCase() === address.toLowerCase() &&
-      hook.chainId === chainId
+      hook.address.toLowerCase() === address.toLowerCase()
   );
 }

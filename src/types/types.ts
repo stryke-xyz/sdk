@@ -23,7 +23,7 @@ export type Token = {
   readonly chainId: SupportedChainIds;
 };
 
-export type SupportedChainIds = 42161 | 146 | 5000 | 80094;
+export type SupportedChainIds = 42161 | 146 | 80094 | 8453 | 1439;
 
 export type Market = {
   readonly pairSymbol: string;
@@ -43,6 +43,5 @@ export type Hook = {
   readonly name: string;
   readonly interval: string;
   readonly maxTTL: number;
-  readonly chainId: SupportedChainIds;
   readonly deprecated: boolean;
 };

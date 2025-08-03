@@ -90,3 +90,37 @@ export const WBERA_BERACHAIN: Token = {
   decimals: 18,
   chainId: 80094,
 };
+
+export const WETH_BASE: Token = {
+  address: "0x4200000000000000000000000000000000000006",
+  symbol: "WETH",
+  decimals: 18,
+  chainId: 8453,
+};
+export const USDC_BASE: Token = {
+  address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  symbol: "USDC",
+  decimals: 6,
+  chainId: 8453,
+};
+
+export const CBBTC_BASE: Token = {
+  address: "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+  symbol: "cbBTC",
+  decimals: 8,
+  chainId: 8453,
+};
+
+export const WINJ_INJECTIVE_TESTNET: Token = {
+  address: "0xaFd9352aF9A75E52Ba2889ba9Fa3b2a960ABef61",
+  symbol: "WINJ",
+  decimals: 18,
+  chainId: 1439,
+};
+
+export const USDC_INJECTIVE_TESTNET: Token = {
+  address: "0x33a6d08bb2b58d88acDd398A0A815715d66Ee869",
+  symbol: "WINJ",
+  decimals: 18,
+  chainId: 1439,
+};

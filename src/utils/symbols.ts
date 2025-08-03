@@ -3,6 +3,7 @@ export const USDC = 'USDC';
 export const USD = 'USD';
 export const WETH = 'WETH';
 export const WBTC = 'BTC';
+export const BTC = 'BTC';
 export const BERA = 'BERA';
 export const BOOP = 'BOOP';
 export const ARB = 'ARB';
