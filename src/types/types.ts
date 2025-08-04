@@ -1,10 +1,8 @@
-export type Address = `0x${string}`;
 
 export type AMM = {
-  readonly chainId: number;
-  readonly address: Address;
+  readonly address: string;
   readonly feeBps: number;
-  readonly handler: Address;
+  readonly handler: string;
   readonly ammVerboseName: string;
   readonly ammShortName: string;
   readonly principleSymbol: string;
@@ -17,7 +15,7 @@ export type AMM = {
 };
 
 export type Token = {
-  readonly address: Address;
+  readonly address: string;
   readonly decimals: number;
   readonly symbol: string;
   readonly chainId: SupportedChainIds;
@@ -29,17 +27,15 @@ export type Market = {
   readonly pairSymbol: string;
   readonly principleSymbol: string;
   readonly quoteSymbol: string;
-  readonly address: Address;
+  readonly address: string;
   readonly primeAmm: AMM;
   readonly amms: readonly AMM[];
   readonly baseToken: Token;
   readonly quoteToken: Token;
-  readonly inversePrice: boolean;
-  readonly chainId: SupportedChainIds;
 };
 
 export type Hook = {
-  readonly address: Address;
+  readonly address: string;
   readonly name: string;
   readonly interval: string;
   readonly maxTTL: number;
