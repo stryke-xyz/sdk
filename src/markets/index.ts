@@ -61,7 +61,7 @@ export const markets: Record<number, Market[]> = {
       quoteSymbol: "USD",
       primeAmm: {
         inversePrice: false,
-        address: "0xb0f6ca40411360c03d41c5ffc5f179b8403cdcf8",
+        address: "0xb0f6cA40411360c03d41C5fFc5F179b8403CdcF8",
         feeBps: 500,
         handler: "0xDA64986BF99c5B179e055B99a84e7B6B2809B957",
         ammVerboseName: "Uniswap V3",
@@ -276,7 +276,7 @@ export const markets: Record<number, Market[]> = {
       quoteSymbol: "USD",
       primeAmm: {
         inversePrice: false,
-        address: "0x22a0c8035d67b01390a93e004e615e62fb147372",
+        address: "0x22A0C8035d67b01390A93E004E615e62FB147372",
         feeBps: 500,
         handler: "0xeDad433bF77E409c05215D4679e4b7de20C9A8Dd",
         ammVerboseName: "Borderless",
