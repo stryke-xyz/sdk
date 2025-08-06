@@ -1,8 +1,10 @@
 import { tokens } from "../tokens";
+import { AMM } from "../types/types";
 
-export const amms = {
+export const amms: Record<number, AMM[]> = {
   146: [
     {
+      chainId: 146,
       inversePrice: false,
       address: "0x324963c267C354c7660Ce8CA3F5f167E05649970",
       feeBps: 1500,
@@ -17,6 +19,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 146,
       inversePrice: true,
       address: "0x6Fb30F3FCB864D49cdff15061ed5c6ADFEE40B40",
       feeBps: 1255,
@@ -31,6 +34,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 146,
       inversePrice: false,
       address: "0x8BC2f9e725cbB07c338df4e77c82190119ddd823",
       feeBps: 1054,
@@ -45,6 +49,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 146,
       inversePrice: false,
       address: "0xb1BC4B830FCbA2184B92e15b9133c41160518038",
       feeBps: 619,
@@ -59,6 +64,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 146,
       inversePrice: true,
       address: "0xfe809A1D337Bdfc98B77A1067e3819f66d8AD23F",
       feeBps: 1337,
@@ -75,6 +81,7 @@ export const amms = {
   ],
   8453: [
     {
+      chainId: 8453,
       inversePrice: true,
       address: "0x4e962BB3889Bf030368F56810A9c96B83CB3E778",
       feeBps: 351,
@@ -89,6 +96,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 8453,
       inversePrice: false,
       address: "0xb2cc224c1c9feE385f8ad6a55b4d94E92359DC59",
       feeBps: 422,
@@ -105,6 +113,7 @@ export const amms = {
   ],
   42161: [
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xb0f6cA40411360c03d41C5fFc5F179b8403CdcF8",
       feeBps: 500,
@@ -119,6 +128,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xfa1cc0cae7779b214b1112322a2d1cf0b511c3bc",
       feeBps: 500,
@@ -133,6 +143,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0x9ffca51d23ac7f7df82da414865ef1055e5afcc3",
       feeBps: 500,
@@ -147,6 +158,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xC6962004f452bE9203591991D15f6b388e09E8D0",
       feeBps: 500,
@@ -161,6 +173,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xf3eb87c1f6020982173c908e7eb31aa66c1f0296",
       feeBps: 500,
@@ -175,6 +188,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xd9e2a1a61b6e61b275cec326465d417e52c1b95c",
       feeBps: 500,
@@ -189,6 +203,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0x0E4831319A50228B9e450861297aB92dee15B44F",
       feeBps: 500,
@@ -203,6 +218,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0x699f628a8a1de0f28cf9181c1f8ed848ebb0bbdf",
       feeBps: 500,
@@ -217,6 +233,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0x843ac8dc6d34aeb07a56812b8b36429ee46bdd07",
       feeBps: 500,
@@ -231,6 +248,7 @@ export const amms = {
       isMemePair: false,
     },
     {
+      chainId: 42161,
       inversePrice: false,
       address: "0xe24F62341D84D11078188d83cA3be118193D6389",
       feeBps: 10000,
@@ -247,6 +265,7 @@ export const amms = {
   ],
   80094: [
     {
+      chainId: 80094,
       inversePrice: false,
       address: "0x9EB897D400f245E151daFD4c81176397D7798C9c",
       feeBps: 3000,
@@ -257,10 +276,11 @@ export const amms = {
       token0: tokens[80094].WETH,
       token1: tokens[80094].HONEY,
       principleSymbol: "ETH",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       isMemePair: false,
     },
     {
+      chainId: 80094,
       inversePrice: false,
       address: "0x545Bea6Ea7F8fD8dCC5C9A6802a8ebF3DbFc1C6E",
       feeBps: 3000,
@@ -271,10 +291,11 @@ export const amms = {
       token0: tokens[80094].WBTC,
       token1: tokens[80094].HONEY,
       principleSymbol: "BTC",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       isMemePair: false,
     },
     {
+      chainId: 80094,
       inversePrice: false,
       address: "0x1127f801Cb3ab7BDF8923272949AA7Dba94B5805",
       feeBps: 3000,
@@ -285,12 +306,13 @@ export const amms = {
       token0: tokens[80094].WBERA,
       token1: tokens[80094].HONEY,
       principleSymbol: "BERA",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       isMemePair: false,
     },
   ],
   1439: [
     {
+      chainId: 1439,
       inversePrice: false,
       address: "0x22A0C8035d67b01390A93E004E615e62FB147372",
       feeBps: 500,

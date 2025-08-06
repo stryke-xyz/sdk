@@ -1,10 +1,21 @@
 {
   "name": "@stryke-xyz/sdk",
-  "version": "1.0.4",
-  "description": "Stryke SDK for decentralized options and AMM integrations.",
+  "version": "1.0.14",
+  "author": "arc@stryke.xyz",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "module": "dist/index.js",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "description": "Stryke SDK for decentralized options and AMM integrations.",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "stryke",
+    "decentralized options"
+  ],
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "build:major": "./scripts/bump-version.sh --type major",
@@ -13,17 +24,5 @@
     "prepare": "npm run build",
     "test": "echo \"No tests specified\" && exit 0"
   },
-  "keywords": [
-    "stryke",
-    "decentralized options"
-  ],
-  "author": "arc@stryke.xyz",
-  "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.8.3"
-  },
-  "dependencies": {},
-  "files": [
-    "dist"
-  ]
+  "types": "dist/index.d.ts"
 }

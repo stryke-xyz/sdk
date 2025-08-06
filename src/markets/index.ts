@@ -6,6 +6,7 @@ import { getAMM } from "../utils";
 export const markets: Record<number, Market[]> = {
   42161: [
     {
+      chainId: 42161,
       address: "0x7bB7B72AA70d9766f3FeC49B3733798c53736aC6",
       amms: amms[42161].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[42161].WETH,
@@ -14,6 +15,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "ETH",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 42161,
         inversePrice: false,
         address: "0xC6962004f452bE9203591991D15f6b388e09E8D0",
         feeBps: 500,
@@ -29,6 +31,7 @@ export const markets: Record<number, Market[]> = {
       },
     },
     {
+      chainId: 42161,
       address: "0xeF96E7023B7BEb1079dC4786fc3693B0b5C228b5",
       amms: amms[42161].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[42161].WBTC,
@@ -37,6 +40,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "BTC",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 42161,
         inversePrice: false,
         address: "0x0E4831319A50228B9e450861297aB92dee15B44F",
         feeBps: 500,
@@ -52,6 +56,7 @@ export const markets: Record<number, Market[]> = {
       },
     },
     {
+      chainId: 42161,
       address: "0x3436fcc243A35FD729474E1B6316055Fe00f7C53",
       amms: amms[42161].filter((amm) => amm.principleSymbol === "ARB"),
       baseToken: tokens[42161].WBTC,
@@ -60,6 +65,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "ARB",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 42161,
         inversePrice: false,
         address: "0xb0f6cA40411360c03d41C5fFc5F179b8403CdcF8",
         feeBps: 500,
@@ -77,6 +83,7 @@ export const markets: Record<number, Market[]> = {
   ],
   146: [
     {
+      chainId: 146,
       address: "0x97dA26d4F4D4C5328ef8c1bF87450ff4ecCdaF07",
       amms: amms[146].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[146].WETH,
@@ -85,6 +92,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "ETH",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 146,
         inversePrice: true,
         address: "0x6Fb30F3FCB864D49cdff15061ed5c6ADFEE40B40",
         feeBps: 1255,
@@ -100,6 +108,7 @@ export const markets: Record<number, Market[]> = {
       },
     },
     {
+      chainId: 146,
       address: "0xD59577047fE4B83aAa6aAd1d1637fC93c475aC88",
       amms: amms[146].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[146].WBTC,
@@ -108,6 +117,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "BTC",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 146,
         inversePrice: false,
         address: "0x8BC2f9e725cbB07c338df4e77c82190119ddd823",
         feeBps: 1054,
@@ -123,6 +133,7 @@ export const markets: Record<number, Market[]> = {
       },
     },
     {
+      chainId: 146,
       address: "0xc2900B1828110968745C5c541Df553BB1682cF3e",
       amms: amms[146].filter((amm) => amm.principleSymbol === "S"),
       baseToken: tokens[146].WSONIC,
@@ -131,6 +142,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "S",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 146,
         inversePrice: false,
         address: "0x324963c267C354c7660Ce8CA3F5f167E05649970",
         feeBps: 1500,
@@ -148,14 +160,16 @@ export const markets: Record<number, Market[]> = {
   ],
   80094: [
     {
+      chainId: 80094,
       address: "0xb077cE9005Db363687B8d204D9D54a218674b67A",
       amms: amms[80094].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[80094].WETH,
       quoteToken: tokens[80094].HONEY,
       pairSymbol: "WETHHONEY",
       principleSymbol: "ETH",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       primeAmm: {
+        chainId: 80094,
         inversePrice: false,
         address: "0x9EB897D400f245E151daFD4c81176397D7798C9c",
         feeBps: 3000,
@@ -166,19 +180,21 @@ export const markets: Record<number, Market[]> = {
         token0: tokens[80094].WETH,
         token1: tokens[80094].HONEY,
         principleSymbol: "ETH",
-        quoteSymbol: "HONEY",
+        quoteSymbol: "USD",
         isMemePair: false,
       },
     },
     {
+      chainId: 80094,
       address: "0x0F18ad4EDb1d9143c796725A7c89a5D76A1e570f",
       amms: amms[80094].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[80094].WBTC,
       quoteToken: tokens[80094].HONEY,
       pairSymbol: "WBTCHONEY",
       principleSymbol: "BTC",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       primeAmm: {
+        chainId: 80094,
         inversePrice: false,
         address: "0x545Bea6Ea7F8fD8dCC5C9A6802a8ebF3DbFc1C6E",
         feeBps: 3000,
@@ -189,19 +205,21 @@ export const markets: Record<number, Market[]> = {
         token0: tokens[80094].WBTC,
         token1: tokens[80094].HONEY,
         principleSymbol: "BTC",
-        quoteSymbol: "HONEY",
+        quoteSymbol: "USD",
         isMemePair: false,
       },
     },
     {
+      chainId: 80094,
       address: "0x922F1EA8e09F2C2308ac66B3c620DB7D8662004e",
       amms: amms[80094].filter((amm) => amm.principleSymbol === "BERA"),
       baseToken: tokens[80094].WBERA,
       quoteToken: tokens[80094].HONEY,
       pairSymbol: "WBERAHONEY",
       principleSymbol: "BERA",
-      quoteSymbol: "HONEY",
+      quoteSymbol: "USD",
       primeAmm: {
+        chainId: 80094,
         inversePrice: false,
         address: "0x1127f801Cb3ab7BDF8923272949AA7Dba94B5805",
         feeBps: 3000,
@@ -212,13 +230,14 @@ export const markets: Record<number, Market[]> = {
         token0: tokens[80094].WBERA,
         token1: tokens[80094].HONEY,
         principleSymbol: "BERA",
-        quoteSymbol: "HONEY",
+        quoteSymbol: "USD",
         isMemePair: false,
       },
     },
   ],
   8453: [
     {
+      chainId: 8453,
       address: "0xFc1D1F89D58c9F8F157ce04cBF59c95d3339Fffd",
       amms: amms[8453].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[8453].WETH,
@@ -227,6 +246,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "ETH",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 8453,
         inversePrice: false,
         address: "0xb2cc224c1c9feE385f8ad6a55b4d94E92359DC59",
         feeBps: 422,
@@ -242,6 +262,7 @@ export const markets: Record<number, Market[]> = {
       },
     },
     {
+      chainId: 8453,
       address: "0xFc1D1F89D58c9F8F157ce04cBF59c95d3339Fffd",
       amms: amms[8453].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[8453].CBBTC,
@@ -250,6 +271,7 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "BTC",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 8453,
         inversePrice: true,
         address: "0x4e962BB3889Bf030368F56810A9c96B83CB3E778",
         feeBps: 351,
@@ -267,6 +289,7 @@ export const markets: Record<number, Market[]> = {
   ],
   1439: [
     {
+      chainId: 1439,
       address: "0xaFd9352aF9A75E52Ba2889ba9Fa3b2a960ABef61",
       amms: amms[1439].filter((amm) => amm.principleSymbol === "INJ"),
       baseToken: tokens[1439].WINJ,
@@ -275,6 +298,8 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "INJ",
       quoteSymbol: "USD",
       primeAmm: {
+        chainId: 1439,
+
         inversePrice: false,
         address: "0x22A0C8035d67b01390A93E004E615e62FB147372",
         feeBps: 500,

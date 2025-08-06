@@ -22,7 +22,7 @@ export type Api = {
   }[];
   "v1/prices": Record<string, number>;
   "v1/markets": {
-    index: number;
+
     ticker: string;
     networks: {
       amms: AMM[];

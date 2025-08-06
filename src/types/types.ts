@@ -1,5 +1,6 @@
 
 export type AMM = {
+  readonly chainId: number;
   readonly address: string;
   readonly feeBps: number;
   readonly handler: string;
@@ -24,6 +25,7 @@ export type Token = {
 export type SupportedChainIds = 42161 | 146 | 80094 | 8453 | 1439;
 
 export type Market = {
+  readonly chainId: number;
   readonly pairSymbol: string;
   readonly principleSymbol: string;
   readonly quoteSymbol: string;
