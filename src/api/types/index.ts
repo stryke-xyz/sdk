@@ -1,4 +1,4 @@
-import { AMM, Hook } from "../../types/types";
+import { AMM, Hook, Token } from "../../types/types";
 
 export type Api = {
   "v1/deposit/history": {
@@ -22,9 +22,11 @@ export type Api = {
   }[];
   "v1/prices": Record<string, number>;
   "v1/markets": {
-
-    ticker: string;
+    principal: string;
+    quote: string;
     networks: {
+      baseToken: Token;
+      quoteToken: Token;
       amms: AMM[];
       primeAMM: AMM;
       pairSymbol: string;
@@ -86,6 +88,8 @@ export type Api = {
     minStrike: number;
     liquidityUsd: number;
     openInterestUsd: number;
+    ticker: string;
+    chainId: number;
     parts: {
       amount0: string;
       amount1: string;

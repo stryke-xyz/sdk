@@ -11,7 +11,7 @@ export const markets: Record<number, Market[]> = {
       amms: amms[42161].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[42161].WETH,
       quoteToken: tokens[42161].USDC,
-      pairSymbol: "ETHUSDC",
+      pairSymbol: "WETHUSDC",
       principleSymbol: "ETH",
       quoteSymbol: "USD",
       primeAmm: {
@@ -36,7 +36,7 @@ export const markets: Record<number, Market[]> = {
       amms: amms[42161].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[42161].WBTC,
       quoteToken: tokens[42161].USDC,
-      pairSymbol: "BTCUSDC",
+      pairSymbol: "WBTCUSDC",
       principleSymbol: "BTC",
       quoteSymbol: "USD",
       primeAmm: {
@@ -88,7 +88,7 @@ export const markets: Record<number, Market[]> = {
       amms: amms[146].filter((amm) => amm.principleSymbol === "ETH"),
       baseToken: tokens[146].WETH,
       quoteToken: tokens[146].USDC,
-      pairSymbol: "ETHUSDC",
+      pairSymbol: "WETHUSDC",
       principleSymbol: "ETH",
       quoteSymbol: "USD",
       primeAmm: {
@@ -113,7 +113,7 @@ export const markets: Record<number, Market[]> = {
       amms: amms[146].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[146].WBTC,
       quoteToken: tokens[146].USDC,
-      pairSymbol: "BTCUSDC",
+      pairSymbol: "WBTCUSDC",
       principleSymbol: "BTC",
       quoteSymbol: "USD",
       primeAmm: {
