@@ -1,6 +1,26 @@
 import { AMM, Hook, Token } from "../../types/types";
 
 export type Api = {
+  "v1/options/quotes": Record<
+    string,
+    {
+      strike: number;
+      type: "call" | "put";
+      availableOptionsAmount: number;
+      availableLiquidityUsd: number;
+      token: Token;
+      rateInToken: string;
+      rateUsd: number;
+      opTicks: {
+        tickLower: number;
+        tickUpper: number;
+        hook: string;
+        pool: string;
+        handler: string;
+        liquidity: string;
+      }[];
+    }[]
+  >;
   "v1/deposit/history": {
     action: "deposit" | "withdraw";
     chain: string;
@@ -90,11 +110,17 @@ export type Api = {
     openInterestUsd: number;
     ticker: string;
     chainId: number;
+    type: "call" | "put";
+    token: Token;
+    premium: {
+      tokenAmount: string;
+      usd: number;
+      expiry: number;
+      ttl: number;
+    }[];
     parts: {
-      amount0: string;
-      amount1: string;
-      amount0Usd: number;
-      amount1Usd: number;
+      amount: string;
+      amountUsd: number;
       hook: Hook;
       handler: string;
       pool: AMM;
