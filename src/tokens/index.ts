@@ -112,7 +112,7 @@ const CBBTC_BASE: Token = {
 };
 
 const WINJ_INJECTIVE_TESTNET: Token = {
-  address: "0xaFd9352aF9A75E52Ba2889ba9Fa3b2a960ABef61",
+  address: "0xf3Bb95A1974aB49aa0399420e1030fC9f566c8Ba",
   symbol: "WINJ",
   decimals: 18,
   chainId: 1439,
