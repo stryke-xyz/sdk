@@ -59,7 +59,7 @@ export const markets: Record<number, Market[]> = {
       chainId: 42161,
       address: "0x3436fcc243A35FD729474E1B6316055Fe00f7C53",
       amms: amms[42161].filter((amm) => amm.principleSymbol === "ARB"),
-      baseToken: tokens[42161].WBTC,
+      baseToken: tokens[42161].ARB,
       quoteToken: tokens[42161].USDC,
       pairSymbol: "ARBUSDC",
       principleSymbol: "ARB",

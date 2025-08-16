@@ -1,6 +1,6 @@
 import { Hook } from "../types/types";
 
-export const STRYKE_WEEKLY_HOOK_ARBITRUM: Hook = {
+export const STRYKE_WEEKLY_HOOK: Hook = {
   address: "0x9436981dDFa57F108BfF350010FE39Ec380f0542",
   name: "stryke_weekly_hook",
   interval: "weekly",
@@ -8,7 +8,7 @@ export const STRYKE_WEEKLY_HOOK_ARBITRUM: Hook = {
   deprecated: false,
 };
 
-export const STRYKE_ZERO_DAY_HOOK_ARBITRUM: Hook = {
+export const STRYKE_ZERO_DAY_HOOK: Hook = {
   address: "0x3F8A76dCeeF79aDBf842Da80796EFc8E778dD422",
   name: "stryke_zero_day_hook",
   interval: "daily",
@@ -16,10 +16,9 @@ export const STRYKE_ZERO_DAY_HOOK_ARBITRUM: Hook = {
   deprecated: false,
 };
 
-export const HOOKS = [
-  STRYKE_WEEKLY_HOOK_ARBITRUM,
-  STRYKE_ZERO_DAY_HOOK_ARBITRUM,
-].map((hook, index) => ({
-  index,
-  ...hook,
-}));
+export const HOOKS = [STRYKE_WEEKLY_HOOK, STRYKE_ZERO_DAY_HOOK].map(
+  (hook, index) => ({
+    index,
+    ...hook,
+  })
+);
