@@ -23,32 +23,27 @@ export type Api = {
   >;
   "v1/deposit/history": {
     action: "deposit" | "withdraw";
-    chain: string;
+    chainId: number;
     blockNumber: string;
     transactionHash: string;
     date: string;
     amount0: number;
     amount1: number;
-    amm: AMM;
-    hook: { address: string };
-    handler: { address: string };
-    range: {
-      min: number;
-      max: number;
-    };
-    meta: {
-      liquidity: string;
-    };
+    amm: string;
+    hook: string;
+    handler: string;
+    strike0: number;
+    strike1: number;
   }[];
   "v1/prices": Record<string, number>;
   "v1/markets": {
     principal: string;
     quote: string;
     networks: {
-      baseToken: Token;
-      quoteToken: Token;
-      amms: AMM[];
-      primeAMM: AMM;
+      baseToken: string;
+      quoteToken: string;
+      amms: string[];
+      primeAMM: string;
       pairSymbol: string;
       totalLiquidityUSD: number;
       availableLiquidityUSD: number;
@@ -59,49 +54,26 @@ export type Api = {
     }[];
   }[];
   "v1/deposit/positions": {
-    chain: string;
+    chainId: number;
     strike0: number;
     strike1: number;
-    pool: AMM;
-    handler: { address: string };
-    hook: { address: string };
-    liquidityUsd: number;
+    pool: string;
+    handler: string;
+    hook: string;
     earningsUsd: number;
-    liquidity: {
-      amount0: string;
-      amount1: string;
-    };
-    withdrawable: {
-      amount0: string;
-      amount1: string;
-    };
-    reserve: {
-      liquidity: {
-        amount0: string;
-        amount1: string;
-      };
-      withdrawable: {
-        amount0: string;
-        amount1: string;
-      };
-    };
-    earnings: {
-      amount0: string;
-      amount1: string;
-    };
-    meta: {
-      tickLower: number;
-      tickUpper: number;
-      liquidityReserved: string;
-      tokenId: string;
-      shares: string;
-      liquidity: string;
-      withdrawableLiquidity: string;
-      withdrawableReservedLiquidity: string;
-    };
-    time: string;
+    liquidityUsd: number;
+    withdrawableUsd: number;
+    reservedUsd: number;
+    withdrawableReservedUsd: number;
+    earned: string;
+    liquidity: string;
+    reserved: string;
+    shares: string;
+    withdrawableLiquidity: string;
+    withdrawableReserved: string;
+    tickLower: number;
+    tickUpper: number;
     version: number;
-    isInRange: boolean;
   }[];
   "v1/strikes-chain": {
     maxStrike: number;

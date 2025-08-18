@@ -1,6 +1,6 @@
 {
   "name": "@stryke-xyz/sdk",
-  "version": "1.0.14",
+  "version": "1.0.32",
   "author": "arc@stryke.xyz",
   "main": "dist/index.js",
   "module": "dist/index.js",
