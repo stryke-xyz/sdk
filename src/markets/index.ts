@@ -1,7 +1,6 @@
 import { amms } from "../amms";
 import { tokens } from "../tokens";
 import { Market } from "../types/types";
-import { getAMM } from "../utils";
 
 export const markets: Record<number, Market[]> = {
   42161: [

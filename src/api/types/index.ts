@@ -30,6 +30,7 @@ export type Api = {
     amount0: number;
     amount1: number;
     amm: string;
+    pool: string;
     hook: string;
     handler: string;
     strike0: number;
@@ -83,8 +84,9 @@ export type Api = {
     ticker: string;
     chainId: number;
     type: "call" | "put";
-    token: Token;
+    token: string;
     premium: {
+      iv: number;
       tokenAmount: string;
       usd: number;
       expiry: number;
@@ -93,21 +95,17 @@ export type Api = {
     parts: {
       amount: string;
       amountUsd: number;
-      hook: Hook;
+      hook: string;
       handler: string;
-      pool: AMM;
-      meta: {
-        liquidity: string;
-        liquidityUsed: string;
-        liquidityAvailable: string;
-      };
+      pool: string;
+      liquidity: string;
+      liquidityUsed: string;
+      liquidityAvailable: string;
     }[];
-    meta: {
-      tickLower: number;
-      tickUpper: number;
-      totalLiquidity: string;
-      totalLiquidityUsed: string;
-      totalLiquidityAvailable: string;
-    };
+    tickLower: number;
+    tickUpper: number;
+    totalLiquidity: string;
+    totalLiquidityUsed: string;
+    totalLiquidityAvailable: string;
   }[];
 };
