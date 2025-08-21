@@ -262,7 +262,7 @@ export const markets: Record<number, Market[]> = {
     },
     {
       chainId: 8453,
-      address: "0xFc1D1F89D58c9F8F157ce04cBF59c95d3339Fffd",
+      address: "0x49B9bB6B281A4E8FD1E2830C204090c0e9f8F1dD",
       amms: amms[8453].filter((amm) => amm.principleSymbol === "BTC"),
       baseToken: tokens[8453].CBBTC,
       quoteToken: tokens[8453].USDC,

@@ -1,4 +1,3 @@
-import { AMM, Hook, Token } from "../../types/types";
 
 export type Api = {
   "v1/options/quotes": Record<
@@ -8,7 +7,7 @@ export type Api = {
       type: "call" | "put";
       availableOptionsAmount: number;
       availableLiquidityUsd: number;
-      token: Token;
+      token: string;
       rateInToken: string;
       rateUsd: number;
       opTicks: {
