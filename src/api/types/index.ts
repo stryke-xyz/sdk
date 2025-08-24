@@ -1,25 +1,54 @@
-
 export type Api = {
-  "v1/options/quotes": Record<
-    string,
-    {
-      strike: number;
-      type: "call" | "put";
-      availableOptionsAmount: number;
-      availableLiquidityUsd: number;
-      token: string;
-      rateInToken: string;
-      rateUsd: number;
-      opTicks: {
-        tickLower: number;
-        tickUpper: number;
-        hook: string;
-        pool: string;
-        handler: string;
-        liquidity: string;
-      }[];
-    }[]
-  >;
+  "v1/options/positions": {
+    market: string;
+    breakEven: number;
+    chainId: number;
+    expiry: string;
+    fee: string;
+    feeUsd: number;
+    isCall: boolean;
+    markPriceAtOpen: number;
+    premium: string;
+    premiumUsd: number;
+    size: string;
+    sizeUsd: number;
+    strike: number;
+    tokenId: string;
+    opTicks: {
+      tickLower: number;
+      tickUpper: number;
+      pool: string;
+      hook: string;
+      handler: string;
+      liquidity: string;
+    }[];
+  }[];
+  "v1/options/assemble": {
+    market: string;
+    tickLower: number;
+    tickUpper: number;
+    transaction: {
+      data: string;
+      to: string;
+    };
+  }[];
+  "v1/options/quotes": {
+    strike: number;
+    type: "call" | "put";
+    availableOptionsAmount: number;
+    availableLiquidityUsd: number;
+    token: string;
+    rateInToken: string;
+    rateUsd: number;
+    tickLower: number;
+    tickUpper: number;
+    opTicks: {
+      hook: string;
+      pool: string;
+      handler: string;
+      liquidity: string;
+    }[];
+  }[];
   "v1/deposit/history": {
     action: "deposit" | "withdraw";
     chainId: number;
@@ -84,14 +113,9 @@ export type Api = {
     chainId: number;
     type: "call" | "put";
     token: string;
-    premium: {
-      iv: number;
-      tokenAmount: string;
-      usd: number;
-      expiry: number;
-      ttl: number;
-    }[];
+    contracts: number;
     parts: {
+      contracts: number;
       amount: string;
       amountUsd: number;
       hook: string;
