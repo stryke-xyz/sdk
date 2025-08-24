@@ -1,0 +1,175 @@
+export const OnSwapReceiverAbi = [
+  {
+    type: "constructor",
+    inputs: [{ name: "_owner", type: "address", internalType: "address" }],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "onSwapReceived",
+    inputs: [
+      { name: "_tokenIn", type: "address", internalType: "address" },
+      { name: "_tokenOut", type: "address", internalType: "address" },
+      { name: "_amountIn", type: "uint256", internalType: "uint256" },
+      { name: "_swapData", type: "bytes", internalType: "bytes" },
+    ],
+    outputs: [{ name: "amountOut", type: "uint256", internalType: "uint256" }],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "owner",
+    inputs: [],
+    outputs: [{ name: "", type: "address", internalType: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "renounceOwnership",
+    inputs: [],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "transferOwnership",
+    inputs: [{ name: "newOwner", type: "address", internalType: "address" }],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "updateSwapperWhitelist",
+    inputs: [
+      { name: "_address", type: "address", internalType: "address" },
+      { name: "_isWhitelisted", type: "bool", internalType: "bool" },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "whitelistedSwappers",
+    inputs: [{ name: "", type: "address", internalType: "address" }],
+    outputs: [{ name: "", type: "bool", internalType: "bool" }],
+    stateMutability: "view",
+  },
+  {
+    type: "event",
+    name: "OnSwapReceived",
+    inputs: [
+      {
+        name: "_amountIn",
+        type: "uint256",
+        indexed: false,
+        internalType: "uint256",
+      },
+      {
+        name: "_amountOut",
+        type: "uint256",
+        indexed: false,
+        internalType: "uint256",
+      },
+      {
+        name: "_tokenIn",
+        type: "address",
+        indexed: false,
+        internalType: "address",
+      },
+      {
+        name: "_tokenOut",
+        type: "address",
+        indexed: false,
+        internalType: "address",
+      },
+      {
+        name: "_swapper",
+        type: "address",
+        indexed: false,
+        internalType: "address",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "OwnershipTransferred",
+    inputs: [
+      {
+        name: "previousOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "newOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "SwapperWhitelisted",
+    inputs: [
+      {
+        name: "_address",
+        type: "address",
+        indexed: false,
+        internalType: "address",
+      },
+      {
+        name: "_isWhitelisted",
+        type: "bool",
+        indexed: false,
+        internalType: "bool",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "error",
+    name: "AddressEmptyCode",
+    inputs: [{ name: "target", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "AddressInsufficientBalance",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+  },
+  { type: "error", name: "FailedInnerCall", inputs: [] },
+  {
+    type: "error",
+    name: "OnSwapReceiver__AmountInNotReceived",
+    inputs: [],
+  },
+  {
+    type: "error",
+    name: "OnSwapReceiver__InsufficientAmountOut",
+    inputs: [],
+  },
+  { type: "error", name: "OnSwapReceiver__InvalidSwapper", inputs: [] },
+  { type: "error", name: "OnSwapReceiver__ZeroAddress", inputs: [] },
+  {
+    type: "error",
+    name: "OnSwapReceiver__onSwapReceivedFail",
+    inputs: [{ name: "data", type: "bytes", internalType: "bytes" }],
+  },
+  {
+    type: "error",
+    name: "OwnableInvalidOwner",
+    inputs: [{ name: "owner", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "OwnableUnauthorizedAccount",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "SafeERC20FailedOperation",
+    inputs: [{ name: "token", type: "address", internalType: "address" }],
+  },
+] as const;

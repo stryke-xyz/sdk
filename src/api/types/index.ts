@@ -1,4 +1,23 @@
 export type Api = {
+  "v1/options/exercise": {
+    market: string;
+    rangeChecks: {
+      user: string;
+      pool: string;
+      market: string;
+      minTickLower: number;
+      maxTickUpper: number;
+      minSqrtPriceX96: string;
+      maxSqrtPriceX96: string;
+      deadline: string;
+    }[];
+    signatures: {
+      v: number;
+      r: string;
+      s: string;
+    }[];
+    tokenId: number;
+  }[];
   "v1/options/positions": {
     market: string;
     breakEven: number;

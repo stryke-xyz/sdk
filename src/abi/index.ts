@@ -5,4 +5,6 @@ export * from "./Slot0Abi";
 export * from "./OptionMarketOTMFEAbi";
 export * from "./OptionPricingAbi";
 export * from "./MintOptionFirewallAbi";
-export * from './PoolSpotPriceAbi'
+export * from "./PoolSpotPriceAbi";
+export * from "./ExerciseOptionFirewallAbi";
+export * from "./OnSwapReceiverAbi";

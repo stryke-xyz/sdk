@@ -1,0 +1,372 @@
+export const ExerciseOptionFirewallAbi = [
+  {
+    type: "constructor",
+    inputs: [{ name: "_owner", type: "address", internalType: "address" }],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "eip712Domain",
+    inputs: [],
+    outputs: [
+      { name: "fields", type: "bytes1", internalType: "bytes1" },
+      { name: "name", type: "string", internalType: "string" },
+      { name: "version", type: "string", internalType: "string" },
+      { name: "chainId", type: "uint256", internalType: "uint256" },
+      {
+        name: "verifyingContract",
+        type: "address",
+        internalType: "address",
+      },
+      { name: "salt", type: "bytes32", internalType: "bytes32" },
+      {
+        name: "extensions",
+        type: "uint256[]",
+        internalType: "uint256[]",
+      },
+    ],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "exerciseOption",
+    inputs: [
+      {
+        name: "market",
+        type: "address",
+        internalType: "contract IOptionMarketOTMFE",
+      },
+      { name: "optionId", type: "uint256", internalType: "uint256" },
+      {
+        name: "settleParams",
+        type: "tuple",
+        internalType: "struct IOptionMarketOTMFE.SettleOptionParams",
+        components: [
+          {
+            name: "optionId",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "swapper",
+            type: "address[]",
+            internalType: "contract ISwapper[]",
+          },
+          {
+            name: "swapData",
+            type: "bytes[]",
+            internalType: "bytes[]",
+          },
+          {
+            name: "liquidityToSettle",
+            type: "uint256[]",
+            internalType: "uint256[]",
+          },
+        ],
+      },
+      {
+        name: "rangeCheckData",
+        type: "tuple[]",
+        internalType: "struct ExerciseOptionFirewall.RangeCheckData[]",
+        components: [
+          { name: "user", type: "address", internalType: "address" },
+          { name: "pool", type: "address", internalType: "address" },
+          { name: "market", type: "address", internalType: "address" },
+          {
+            name: "minTickLower",
+            type: "int24",
+            internalType: "int24",
+          },
+          {
+            name: "maxTickUpper",
+            type: "int24",
+            internalType: "int24",
+          },
+          {
+            name: "minSqrtPriceX96",
+            type: "uint160",
+            internalType: "uint160",
+          },
+          {
+            name: "maxSqrtPriceX96",
+            type: "uint160",
+            internalType: "uint160",
+          },
+          { name: "deadline", type: "uint256", internalType: "uint256" },
+        ],
+      },
+      {
+        name: "signature",
+        type: "tuple[]",
+        internalType: "struct ExerciseOptionFirewall.Signature[]",
+        components: [
+          { name: "v", type: "uint8", internalType: "uint8" },
+          { name: "r", type: "bytes32", internalType: "bytes32" },
+          { name: "s", type: "bytes32", internalType: "bytes32" },
+        ],
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "tuple",
+        internalType: "struct IOptionMarketOTMFE.AssetsCache",
+        components: [
+          {
+            name: "totalProfit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "totalAssetRelocked",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "assetToUse",
+            type: "address",
+            internalType: "contract ERC20",
+          },
+          {
+            name: "assetToGet",
+            type: "address",
+            internalType: "contract ERC20",
+          },
+          { name: "isSettle", type: "bool", internalType: "bool" },
+        ],
+      },
+    ],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "getDomainSeparator",
+    inputs: [],
+    outputs: [{ name: "", type: "bytes32", internalType: "bytes32" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "getRangeCheckTypehash",
+    inputs: [],
+    outputs: [{ name: "", type: "bytes32", internalType: "bytes32" }],
+    stateMutability: "pure",
+  },
+  {
+    type: "function",
+    name: "hashTypedDataV4",
+    inputs: [{ name: "structHash", type: "bytes32", internalType: "bytes32" }],
+    outputs: [{ name: "", type: "bytes32", internalType: "bytes32" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "multicall",
+    inputs: [{ name: "data", type: "bytes[]", internalType: "bytes[]" }],
+    outputs: [{ name: "results", type: "bytes[]", internalType: "bytes[]" }],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "owner",
+    inputs: [],
+    outputs: [{ name: "", type: "address", internalType: "address" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "renounceOwnership",
+    inputs: [],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "settleOption",
+    inputs: [
+      {
+        name: "market",
+        type: "address",
+        internalType: "contract IOptionMarketOTMFE",
+      },
+      { name: "optionId", type: "uint256", internalType: "uint256" },
+      {
+        name: "settleParams",
+        type: "tuple",
+        internalType: "struct IOptionMarketOTMFE.SettleOptionParams",
+        components: [
+          {
+            name: "optionId",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "swapper",
+            type: "address[]",
+            internalType: "contract ISwapper[]",
+          },
+          {
+            name: "swapData",
+            type: "bytes[]",
+            internalType: "bytes[]",
+          },
+          {
+            name: "liquidityToSettle",
+            type: "uint256[]",
+            internalType: "uint256[]",
+          },
+        ],
+      },
+    ],
+    outputs: [
+      {
+        name: "",
+        type: "tuple",
+        internalType: "struct IOptionMarketOTMFE.AssetsCache",
+        components: [
+          {
+            name: "totalProfit",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "totalAssetRelocked",
+            type: "uint256",
+            internalType: "uint256",
+          },
+          {
+            name: "assetToUse",
+            type: "address",
+            internalType: "contract ERC20",
+          },
+          {
+            name: "assetToGet",
+            type: "address",
+            internalType: "contract ERC20",
+          },
+          { name: "isSettle", type: "bool", internalType: "bool" },
+        ],
+      },
+    ],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "transferOwnership",
+    inputs: [{ name: "newOwner", type: "address", internalType: "address" }],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "updateWhitelistedExecutor",
+    inputs: [
+      { name: "executor", type: "address", internalType: "address" },
+      { name: "isWhitelisted", type: "bool", internalType: "bool" },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "updateWhitelistedMarket",
+    inputs: [
+      { name: "market", type: "address", internalType: "address" },
+      { name: "isWhitelisted", type: "bool", internalType: "bool" },
+    ],
+    outputs: [],
+    stateMutability: "nonpayable",
+  },
+  {
+    type: "function",
+    name: "whitelistedExecutors",
+    inputs: [{ name: "", type: "address", internalType: "address" }],
+    outputs: [{ name: "", type: "bool", internalType: "bool" }],
+    stateMutability: "view",
+  },
+  {
+    type: "function",
+    name: "whitelistedMarkets",
+    inputs: [{ name: "", type: "address", internalType: "address" }],
+    outputs: [{ name: "", type: "bool", internalType: "bool" }],
+    stateMutability: "view",
+  },
+  {
+    type: "event",
+    name: "EIP712DomainChanged",
+    inputs: [],
+    anonymous: false,
+  },
+  {
+    type: "event",
+    name: "OwnershipTransferred",
+    inputs: [
+      {
+        name: "previousOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+      {
+        name: "newOwner",
+        type: "address",
+        indexed: true,
+        internalType: "address",
+      },
+    ],
+    anonymous: false,
+  },
+  {
+    type: "error",
+    name: "AddressEmptyCode",
+    inputs: [{ name: "target", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "AddressInsufficientBalance",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+  },
+  { type: "error", name: "ArrayLenMismatch", inputs: [] },
+  { type: "error", name: "ECDSAInvalidSignature", inputs: [] },
+  {
+    type: "error",
+    name: "ECDSAInvalidSignatureLength",
+    inputs: [{ name: "length", type: "uint256", internalType: "uint256" }],
+  },
+  {
+    type: "error",
+    name: "ECDSAInvalidSignatureS",
+    inputs: [{ name: "s", type: "bytes32", internalType: "bytes32" }],
+  },
+  { type: "error", name: "FailedInnerCall", inputs: [] },
+  { type: "error", name: "InvalidDeadline", inputs: [] },
+  { type: "error", name: "InvalidShortString", inputs: [] },
+  { type: "error", name: "InvalidSignature", inputs: [] },
+  { type: "error", name: "InvalidSqrtPriceX96", inputs: [] },
+  { type: "error", name: "InvalidTick", inputs: [] },
+  { type: "error", name: "NotOwner", inputs: [] },
+  { type: "error", name: "NotWhitelistedExecutor", inputs: [] },
+  { type: "error", name: "NotWhitelistedMarket", inputs: [] },
+  { type: "error", name: "OptionExpired", inputs: [] },
+  { type: "error", name: "OptionNotExpired", inputs: [] },
+  {
+    type: "error",
+    name: "OwnableInvalidOwner",
+    inputs: [{ name: "owner", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "OwnableUnauthorizedAccount",
+    inputs: [{ name: "account", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "SafeERC20FailedOperation",
+    inputs: [{ name: "token", type: "address", internalType: "address" }],
+  },
+  {
+    type: "error",
+    name: "StringTooLong",
+    inputs: [{ name: "str", type: "string", internalType: "string" }],
+  },
+] as const;
