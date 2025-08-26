@@ -88,15 +88,10 @@ export type Api = {
     principal: string;
     quote: string;
     networks: {
-      baseToken: string;
-      quoteToken: string;
-      amms: string[];
-      primeAMM: string;
-      pairSymbol: string;
-      totalLiquidityUSD: number;
-      availableLiquidityUSD: number;
-      dailyVolumeUSD: number;
-      weeklyEarnedUSD: number;
+      liquidityUsd: number;
+      openInterestUsd: number;
+      dailyVolumeUsd: number;
+      dailyPremiumUsd: number;
       address: string;
       chainId: number;
     }[];
