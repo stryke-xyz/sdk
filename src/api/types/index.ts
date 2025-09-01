@@ -1,4 +1,15 @@
 export type Api = {
+  "v1/deposit/earned": {
+    type: string;
+    pool: string;
+    hook: string;
+    chainId: number;
+    timestamp: string;
+    amount0: string;
+    amount1: string;
+    tickLower: number;
+    tickUpper: number;
+  };
   "v1/options/exercise": {
     market: string;
     rangeChecks: {
@@ -56,6 +67,9 @@ export type Api = {
     type: "call" | "put";
     availableOptionsAmount: number;
     availableLiquidityUsd: number;
+    protocolFeeRate: number;
+    protocolFeeInToken: string;
+    protocolFeeUsd: number;
     token: string;
     rateInToken: string;
     rateUsd: number;
@@ -104,11 +118,12 @@ export type Api = {
     handler: string;
     hook: string;
     earningsUsd: number;
+    earnedAmount0: string;
+    earnedAmount1: string;
     liquidityUsd: number;
     withdrawableUsd: number;
     reservedUsd: number;
     withdrawableReservedUsd: number;
-    earned: string;
     liquidity: string;
     reserved: string;
     shares: string;
