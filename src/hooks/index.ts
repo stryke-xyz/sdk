@@ -1,7 +1,7 @@
 import { Hook } from "../types/types";
 
 export const STRYKE_WEEKLY_HOOK: Hook = {
-  address: "0x9436981dDFa57F108BfF350010FE39Ec380f0542",
+  address: "0x205D7125FA32a5388dcEe28c37906c7D04e1eB98",
   name: "stryke_weekly_hook",
   interval: "weekly",
   maxTTL: 604800, // 7 days in seconds
@@ -9,7 +9,7 @@ export const STRYKE_WEEKLY_HOOK: Hook = {
 };
 
 export const STRYKE_ZERO_DAY_HOOK: Hook = {
-  address: "0x3F8A76dCeeF79aDBf842Da80796EFc8E778dD422",
+  address: "0x17A2A73904EdFD382304a807B80b56dc57adb1E7",
   name: "stryke_zero_day_hook",
   interval: "daily",
   maxTTL: 86400, // 1 day in seconds

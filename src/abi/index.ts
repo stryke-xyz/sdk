@@ -9,3 +9,4 @@ export * from "./PoolSpotPriceAbi";
 export * from "./ExerciseOptionFirewallAbi";
 export * from "./OnSwapReceiverAbi";
 export * from "./FeeStrategyAbi";
+export * from './MerkleFeeDistributorAbi';
