@@ -7,3 +7,4 @@ export * from "./handlers";
 export * from "./hooks";
 export * from "./abi";
 export * from "./markets";
+export * from "./deployments";

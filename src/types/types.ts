@@ -21,7 +21,7 @@ export type Token = {
   readonly chainId: SupportedChainIds;
 };
 
-export type SupportedChainIds = 42161 | 146 | 80094 | 8453 | 1439;
+export type SupportedChainIds = 42161 | 146 | 80094 | 8453 | 1439 | 4663;
 
 export type Market = {
   readonly chainId: number;
@@ -36,9 +36,37 @@ export type Market = {
 };
 
 export type Hook = {
+  readonly chainId: SupportedChainIds;
   readonly address: string;
   readonly name: string;
   readonly interval: string;
   readonly maxTTL: number;
   readonly deprecated: boolean;
+};
+
+export type DeploymentContracts = {
+  readonly positionManager?: string;
+  readonly handler?: string;
+  readonly optionPricing?: string;
+  readonly feeStrategy?: string;
+  readonly poolSpotPrice?: string;
+  readonly mintOptionFirewall?: string;
+  readonly exerciseOptionFirewall?: string;
+  readonly openSettlement?: string;
+  readonly addLiquidityRouter?: string;
+  readonly multiSwapRouter?: string;
+  readonly onSwapReceiver?: string;
+  readonly swapRouterSwapper?: string;
+  readonly swapRouter?: string;
+  readonly feeClaim?: string;
+  readonly merkleFeeDistributor?: string;
+};
+
+export type ChainDeployment = {
+  readonly chainId: SupportedChainIds;
+  readonly name: string;
+  readonly factory?: string;
+  readonly poolInitCodeHash?: string;
+  readonly contracts: DeploymentContracts;
+  readonly optionMarkets: readonly string[];
 };

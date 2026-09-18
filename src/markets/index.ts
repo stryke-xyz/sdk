@@ -2,7 +2,22 @@ import { amms } from "../amms";
 import { tokens } from "../tokens";
 import { Market } from "../types/types";
 
+const ROBINHOOD_PONS_USDG_AMM = amms[4663][0]!;
+
 export const markets: Record<number, Market[]> = {
+  4663: [
+    {
+      chainId: 4663,
+      address: "0x6c3dfe2082de2d32812baabca6925eed35881853",
+      amms: [ROBINHOOD_PONS_USDG_AMM],
+      baseToken: tokens[4663].PONS,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "PONSUSD",
+      principleSymbol: "PONS",
+      quoteSymbol: "USD",
+      primeAmm: ROBINHOOD_PONS_USDG_AMM,
+    },
+  ],
   42161: [
     {
       chainId: 42161,

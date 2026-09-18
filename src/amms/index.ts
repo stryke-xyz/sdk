@@ -1,7 +1,25 @@
+import { RH_CHAIN_ID } from "../chains";
 import { tokens } from "../tokens";
 import { AMM } from "../types/types";
 
 export const amms: Record<number, AMM[]> = {
+  4663: [
+    {
+      chainId: RH_CHAIN_ID,
+      inversePrice: false,
+      address: "0x7A192E71564ec66eE0763e328a3Ac274942dE4e1",
+      feeBps: 10000,
+      handler: "0x67599652ec14f635837929b4c08b1adc10f83300",
+      ammVerboseName: "Uniswap V3",
+      ammShortName: "uniswapv3",
+      tickSpacing: 200,
+      token0: tokens[4663].PONS,
+      token1: tokens[4663].USDG,
+      principleSymbol: "PONS",
+      quoteSymbol: "USD",
+      isMemePair: false,
+    },
+  ],
   146: [
     {
       chainId: 146,

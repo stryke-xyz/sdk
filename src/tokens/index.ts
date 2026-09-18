@@ -126,6 +126,50 @@ const USDC_INJECTIVE_TESTNET: Token = {
 };
 
 export const tokens = {
+  4663: {
+    PONS: {
+      address: "0x39dBED3a2bd333467115dE45665cC57F813C4571",
+      symbol: "PONS",
+      decimals: 18,
+      chainId: 4663,
+    },
+    USDG: {
+      address: "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      symbol: "USDG",
+      decimals: 6,
+      chainId: 4663,
+    },
+    STONKBROKER: {
+      address: "0xe934e36a439c94017b64a3fece66af12099abf50",
+      symbol: "STONKBROKER",
+      decimals: 18,
+      chainId: 4663,
+    },
+    QUOTRON: {
+      address: "0x5a86828Efd322bfb16d93cFeD16EE9BC14940D7F",
+      symbol: "QUOTRON",
+      decimals: 18,
+      chainId: 4663,
+    },
+    AI: {
+      address: "0x2E8c31162b855A2ffa90F6F8634643Ad6F111e18",
+      symbol: "AI",
+      decimals: 18,
+      chainId: 4663,
+    },
+    NUDES: {
+      address: "0xbe98b75361935b18d688409424a869a4C3dC7401",
+      symbol: "NUDES",
+      decimals: 18,
+      chainId: 4663,
+    },
+    BONER: {
+      address: "0x98096d17e191B3dA1d5f99a6D7b3584351b11E18",
+      symbol: "BONER",
+      decimals: 18,
+      chainId: 4663,
+    },
+  },
   42161: {
     WETH: WETH_ARBITRUM,
     USDC: USDC_ARBITRUM,
@@ -174,7 +218,7 @@ export function getToken({
   if (symbol) return _tokensMapping[symbol];
   return (
     Object.values(_tokensMapping || {}).find(
-      (token) => token.address === address
+      (token) => token.address === address,
     ) || null
   );
 }
