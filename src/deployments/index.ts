@@ -48,7 +48,7 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
     contracts: {
       positionManager: "0xc013926a2ecc498a1a986082acac26cf966c7e59",
       handler: "0x67599652ec14f635837929b4c08b1adc10f83300",
-      optionPricing: "0x8d2f4d97e26f3068d2f0e28d5d8dcc6e7b3cac33",
+      optionPricing: "0xDC5Bb5cd4e8131B558a653406e44a0842583B7EE",
       feeStrategy: "0x56b8221882e4707f998f3e9717fbdfde628ed1b2",
       poolSpotPrice: "0x99e3d2d5ce27780bcf2966c42ff7e811b64a3af8",
       mintOptionFirewall: "0xf3d2504b9ffea0ec6a55a317ef635c9e6b474659",
@@ -56,7 +56,7 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
       openSettlement: "0xa53b8aabdadf2b3a329355c473be46faddd75f88",
       addLiquidityRouter: "0x3333276a73a826ac18374496d06ee564706421e5",
       multiSwapRouter: "0xec6fbc7935307529bd101ca0e08237184a970c8a",
-      onSwapReceiver: "0x6fe07fe4e7451fcc6c6865cae3190c6fa3259454",
+      onSwapReceiver: "0x26dAe4850D151f215aBf8f7B901f1BCbD6fF02F5",
       swapRouterSwapper: "0x182130d289658426ee6101a1597f392c9c8efd6d",
       swapRouter: "0xcaf681a66d020601342297493863e78c959e5cb2",
       merkleFeeDistributor: "0x2D1D09E62De6C8BFFb31F0836406d545740507c2",
