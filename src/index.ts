@@ -8,3 +8,4 @@ export * from "./hooks";
 export * from "./abi";
 export * from "./markets";
 export * from "./deployments";
+export * from "./client";

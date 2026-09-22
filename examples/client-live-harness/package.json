@@ -1,0 +1,15 @@
+{
+  "name": "stryke-client-live-harness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "deposit:prepare": "node src/index.mjs",
+    "deposit": "node src/index.mjs"
+  },
+  "dependencies": {
+    "@stryke-xyz/sdk": "1.0.15",
+    "dotenv": "^16.6.1",
+    "viem": "2.56.8"
+  }
+}

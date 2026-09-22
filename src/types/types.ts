@@ -47,6 +47,8 @@ export type Hook = {
 export type DeploymentContracts = {
   readonly positionManager?: string;
   readonly handler?: string;
+  /** Handler used by Slipstream/UP V3 pools on chains with multiple AMMs. */
+  readonly upHandler?: string;
   readonly optionPricing?: string;
   readonly feeStrategy?: string;
   readonly poolSpotPrice?: string;
@@ -66,6 +68,8 @@ export type ChainDeployment = {
   readonly chainId: SupportedChainIds;
   readonly name: string;
   readonly factory?: string;
+  /** UP/Slipstream factory when it differs from the canonical V3 factory. */
+  readonly upFactory?: string;
   readonly poolInitCodeHash?: string;
   readonly contracts: DeploymentContracts;
   readonly optionMarkets: readonly string[];

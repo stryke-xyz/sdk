@@ -6,6 +6,12 @@ export const handlers = {
       ammName: "uniswap-v3",
       ammVerboseName: "Uniswap V3",
     },
+    {
+      chainId: 4663,
+      address: "0x02a81b0eB603D1E228C4F3E5eD756E8b6EE64f11",
+      ammName: "up-v3",
+      ammVerboseName: "UP V3",
+    },
   ],
   42161: [
     {

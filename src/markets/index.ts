@@ -3,6 +3,10 @@ import { tokens } from "../tokens";
 import { Market } from "../types/types";
 
 const ROBINHOOD_PONS_USDG_AMM = amms[4663][0]!;
+const ROBINHOOD_STONKBROKER_USDG_AMM = amms[4663][1]!;
+const ROBINHOOD_QUOTRON_USDG_AMM = amms[4663][2]!;
+const ROBINHOOD_AI_USDG_AMM = amms[4663][3]!;
+const ROBINHOOD_BONER_USDG_AMM = amms[4663][4]!;
 
 export const markets: Record<number, Market[]> = {
   4663: [
@@ -16,6 +20,50 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "PONS",
       quoteSymbol: "USD",
       primeAmm: ROBINHOOD_PONS_USDG_AMM,
+    },
+    {
+      chainId: 4663,
+      address: "0x94216dD7998FfC807175740398e06Fa9F067B042",
+      amms: [ROBINHOOD_STONKBROKER_USDG_AMM],
+      baseToken: tokens[4663].STONKBROKER,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "STONKBROKERUSD",
+      principleSymbol: "STONKBROKER",
+      quoteSymbol: "USD",
+      primeAmm: ROBINHOOD_STONKBROKER_USDG_AMM,
+    },
+    {
+      chainId: 4663,
+      address: "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624",
+      amms: [ROBINHOOD_QUOTRON_USDG_AMM],
+      baseToken: tokens[4663].QUOTRON,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "QUOTRONUSD",
+      principleSymbol: "QUOTRON",
+      quoteSymbol: "USD",
+      primeAmm: ROBINHOOD_QUOTRON_USDG_AMM,
+    },
+    {
+      chainId: 4663,
+      address: "0x9e7e0341b64FC1990f960AD493BbAAd80400f75A",
+      amms: [ROBINHOOD_AI_USDG_AMM],
+      baseToken: tokens[4663].AI,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "AIUSD",
+      principleSymbol: "AI",
+      quoteSymbol: "USD",
+      primeAmm: ROBINHOOD_AI_USDG_AMM,
+    },
+    {
+      chainId: 4663,
+      address: "0x97ab715d7861b535d2085f7ba078e6d16e6c75c6",
+      amms: [ROBINHOOD_BONER_USDG_AMM],
+      baseToken: tokens[4663].BONER,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "BONERUSD",
+      principleSymbol: "BONER",
+      quoteSymbol: "USD",
+      primeAmm: ROBINHOOD_BONER_USDG_AMM,
     },
   ],
   42161: [

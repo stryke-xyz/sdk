@@ -1,9 +1,12 @@
 {
   "name": "@stryke-xyz/sdk",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "arc@stryke.xyz",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "dependencies": {
+    "viem": "^2.56.7"
+  },
   "devDependencies": {
     "typescript": "^5.8.3"
   },
@@ -21,8 +24,9 @@
     "build:major": "./scripts/bump-version.sh --type major",
     "build:minor": "./scripts/bump-version.sh",
     "build:patch": "./scripts/bump-version.sh --type patch",
+    "client:harness": "npm run build && node examples/client-harness/index.cjs",
     "prepare": "npm run build",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "npm run build && node test/client.test.cjs"
   },
   "types": "dist/index.d.ts"
 }
