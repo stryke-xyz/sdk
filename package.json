@@ -19,6 +19,9 @@
     "decentralized options"
   ],
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://verdaccio-production-b025.up.railway.app/"
+  },
   "scripts": {
     "build": "tsc",
     "build:major": "./scripts/bump-version.sh --type major",
