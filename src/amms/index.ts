@@ -1,5 +1,5 @@
 import { RH_CHAIN_ID } from "../chains";
-import { tokens } from "../tokens";
+import { retiredTokens, tokens } from "../tokens";
 import { AMM } from "../types/types";
 
 export const amms: Record<number, AMM[]> = {
@@ -31,21 +31,6 @@ export const amms: Record<number, AMM[]> = {
       token0: tokens[4663].USDG,
       token1: tokens[4663].STONKBROKER,
       principleSymbol: "STONKBROKER",
-      quoteSymbol: "USD",
-      isMemePair: true,
-    },
-    {
-      chainId: RH_CHAIN_ID,
-      inversePrice: false,
-      address: "0xb77e03DF4CAe1752aa1E2b52C46794026b46873E",
-      feeBps: 10000,
-      handler: "0x67599652ec14f635837929b4c08b1adc10f83300",
-      ammVerboseName: "Uniswap V3",
-      ammShortName: "uniswap-v3",
-      tickSpacing: 200,
-      token0: tokens[4663].QUOTRON,
-      token1: tokens[4663].USDG,
-      principleSymbol: "QUOTRON",
       quoteSymbol: "USD",
       isMemePair: true,
     },
@@ -403,6 +388,27 @@ export const amms: Record<number, AMM[]> = {
       principleSymbol: "INJ",
       quoteSymbol: "USD",
       isMemePair: false,
+    },
+  ],
+};
+
+/** Retired AMMs remain resolvable by address for existing position flows. */
+export const retiredAmms: Partial<Record<number, AMM[]>> = {
+  [RH_CHAIN_ID]: [
+    {
+      chainId: RH_CHAIN_ID,
+      inversePrice: false,
+      address: "0xb77e03DF4CAe1752aa1E2b52C46794026b46873E",
+      feeBps: 10000,
+      handler: "0x67599652ec14f635837929b4c08b1adc10f83300",
+      ammVerboseName: "Uniswap V3",
+      ammShortName: "uniswap-v3",
+      tickSpacing: 200,
+      token0: retiredTokens[RH_CHAIN_ID]!.QUOTRON!,
+      token1: tokens[RH_CHAIN_ID].USDG,
+      principleSymbol: "QUOTRON",
+      quoteSymbol: "USD",
+      isMemePair: true,
     },
   ],
 };

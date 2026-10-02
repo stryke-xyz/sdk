@@ -1,12 +1,11 @@
-import { amms } from "../amms";
-import { tokens } from "../tokens";
+import { amms, retiredAmms } from "../amms";
+import { retiredTokens, tokens } from "../tokens";
 import { Market } from "../types/types";
 
 const ROBINHOOD_PONS_USDG_AMM = amms[4663][0]!;
 const ROBINHOOD_STONKBROKER_USDG_AMM = amms[4663][1]!;
-const ROBINHOOD_QUOTRON_USDG_AMM = amms[4663][2]!;
-const ROBINHOOD_AI_USDG_AMM = amms[4663][3]!;
-const ROBINHOOD_BONER_USDG_AMM = amms[4663][4]!;
+const ROBINHOOD_AI_USDG_AMM = amms[4663][2]!;
+const ROBINHOOD_BONER_USDG_AMM = amms[4663][3]!;
 
 export const markets: Record<number, Market[]> = {
   4663: [
@@ -31,17 +30,6 @@ export const markets: Record<number, Market[]> = {
       principleSymbol: "STONKBROKER",
       quoteSymbol: "USD",
       primeAmm: ROBINHOOD_STONKBROKER_USDG_AMM,
-    },
-    {
-      chainId: 4663,
-      address: "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624",
-      amms: [ROBINHOOD_QUOTRON_USDG_AMM],
-      baseToken: tokens[4663].QUOTRON,
-      quoteToken: tokens[4663].USDG,
-      pairSymbol: "QUOTRONUSD",
-      principleSymbol: "QUOTRON",
-      quoteSymbol: "USD",
-      primeAmm: ROBINHOOD_QUOTRON_USDG_AMM,
     },
     {
       chainId: 4663,
@@ -377,4 +365,24 @@ export const markets: Record<number, Market[]> = {
   //     },
   //   },
   // ],
+};
+
+/**
+ * Retired markets are excluded from `markets` so they cannot be newly listed,
+ * but remain available for resolving existing positions and history.
+ */
+export const retiredMarkets: Partial<Record<number, Market[]>> = {
+  4663: [
+    {
+      chainId: 4663,
+      address: "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624",
+      amms: [retiredAmms[4663]![0]!],
+      baseToken: retiredTokens[4663]!.QUOTRON!,
+      quoteToken: tokens[4663].USDG,
+      pairSymbol: "QUOTRONUSD",
+      principleSymbol: "QUOTRON",
+      quoteSymbol: "USD",
+      primeAmm: retiredAmms[4663]![0]!,
+    },
+  ],
 };

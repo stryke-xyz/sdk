@@ -145,12 +145,6 @@ export const tokens = {
       decimals: 18,
       chainId: 4663,
     },
-    QUOTRON: {
-      address: "0x5a86828Efd322bfb16d93cFeD16EE9BC14940D7F",
-      symbol: "QUOTRON",
-      decimals: 18,
-      chainId: 4663,
-    },
     AI: {
       address: "0x2E8c31162b855A2ffa90F6F8634643Ad6F111e18",
       symbol: "AI",
@@ -199,6 +193,21 @@ export const tokens = {
     USDC: USDC_INJECTIVE_TESTNET,
   },
 } as const;
+
+/**
+ * Retired token metadata kept for resolving existing positions and history.
+ * It is deliberately excluded from `tokens`, the active token catalog.
+ */
+export const retiredTokens: Partial<Record<number, Record<string, Token>>> = {
+  4663: {
+    QUOTRON: {
+      address: "0x5a86828Efd322bfb16d93cFeD16EE9BC14940D7F",
+      symbol: "QUOTRON",
+      decimals: 18,
+      chainId: 4663,
+    },
+  },
+};
 
 type GetTokenParams = {
   chainId: number;

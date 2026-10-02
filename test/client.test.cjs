@@ -1,5 +1,5 @@
 const assert = require("node:assert/strict");
-const client = require("../dist");
+const client = require(process.env.SDK_TEST_DIST || "../dist");
 
 const addresses = {
   user: "0x1111111111111111111111111111111111111111",
@@ -13,6 +13,18 @@ const addresses = {
   firewall: "0x9999999999999999999999999999999999999999",
   swapper: "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
 };
+
+const retiredMarketAddress = "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624";
+const retiredPoolAddress = "0xb77e03DF4CAe1752aa1E2b52C46794026b46873E";
+assert(!client.getMarkets(4663).some((market) => market.address.toLowerCase() === retiredMarketAddress.toLowerCase()));
+assert(!client.getAMMs({ chainId: 4663 }).some((amm) => amm.address.toLowerCase() === retiredPoolAddress.toLowerCase()));
+assert(client.getDeployment(4663).optionMarkets.some((address) => address.toLowerCase() === retiredMarketAddress.toLowerCase()));
+
+const retiredMarket = client.getMarket({ chainId: 4663, address: retiredMarketAddress });
+const retiredAmm = client.getAMM({ chainId: 4663, address: retiredPoolAddress });
+assert.equal(retiredMarket.baseToken.symbol, "QUOTRON");
+assert.equal(retiredMarket.quoteToken.symbol, "USDG");
+assert.equal(retiredAmm.address.toLowerCase(), retiredPoolAddress.toLowerCase());
 
 const amm = {
   chainId: 4663,
@@ -73,6 +85,18 @@ const withdraw = client.buildWithdrawPlan({
 });
 assert.equal(withdraw.approvals.length, 0);
 assert.equal(withdraw.transaction.to.toLowerCase(), addresses.router);
+
+const retiredWithdraw = client.buildWithdrawPlan({
+  chainId: 4663,
+  positionManager: client.getDeployment(4663).contracts.positionManager,
+  handler: retiredAmm.handler,
+  pool: retiredAmm.address,
+  hook: addresses.hook,
+  tickLower: -200,
+  tickUpper: 200,
+  liquidity: 1000n,
+});
+assert.equal(retiredWithdraw.transaction.to.toLowerCase(), client.getDeployment(4663).contracts.positionManager.toLowerCase());
 
 const swapData = client.buildOnSwapReceiverData({
   target: addresses.router,
@@ -172,4 +196,26 @@ const expiry = client.buildExpirySettlementPlan({
 });
 assert.equal(expiry.transaction.to.toLowerCase(), addresses.router);
 
-console.log("client transaction builder tests passed");
+void (async () => {
+  let requestedUrl = "";
+  const api = new client.StrykeApiClient({
+    baseUrl: "https://api.invalid",
+    fetch: async (input) => {
+      requestedUrl = String(input);
+      return new Response("[]", { status: 200 });
+    },
+  });
+  const positions = await api.getOptionPositions({
+    chain: "robinhood",
+    user: addresses.user,
+    market: retiredMarketAddress,
+  });
+  assert.deepEqual(positions, []);
+  const query = new URL(requestedUrl).searchParams;
+  assert.equal(new URL(requestedUrl).pathname, "/v1/options/positions");
+  assert.equal(query.get("market"), retiredMarketAddress);
+  console.log("client transaction builder tests passed");
+})().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

@@ -1,6 +1,6 @@
 {
   "name": "@stryke-xyz/sdk",
-  "version": "1.0.15",
+  "version": "2.0.0",
   "author": "arc@stryke.xyz",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,7 +29,7 @@
     "build:patch": "./scripts/bump-version.sh --type patch",
     "client:harness": "npm run build && node examples/client-harness/index.cjs",
     "prepare": "npm run build",
-    "test": "npm run build && node test/client.test.cjs"
+    "test": "npm run build && node test/client.test.cjs && node test/metadata-delisting.test.cjs"
   },
   "types": "dist/index.d.ts"
 }

@@ -1,7 +1,4 @@
-import {
-  ARBITRUM_CHAIN_ID,
-  RH_CHAIN_ID,
-} from "../chains";
+import { ARBITRUM_CHAIN_ID, RH_CHAIN_ID } from "../chains";
 import {
   ADD_LIQUIDITY_ROUTER_ADDRESS,
   EXERCISE_OPTION_FIREWALL_ADDRESS,
@@ -45,7 +42,8 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
     name: "robinhood",
     factory: "0x1f7d7550B1b028f7571E69A784071F0205FD2EfA",
     upFactory: "0x1ac9dB4a2608ba45D6127B1737949b51Bb54B7F3",
-    poolInitCodeHash: "0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54",
+    poolInitCodeHash:
+      "0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54",
     contracts: {
       positionManager: "0xc013926a2ecc498a1a986082acac26cf966c7e59",
       handler: "0x67599652ec14f635837929b4c08b1adc10f83300",
@@ -66,6 +64,7 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
     optionMarkets: [
       "0x6c3dfe2082de2d32812baabca6925eed35881853",
       "0x94216dD7998FfC807175740398e06Fa9F067B042",
+      // Keep indexing this retired market so existing positions and history remain available.
       "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624",
       "0x9e7e0341b64FC1990f960AD493BbAAd80400f75A",
       "0x97ab715d7861b535d2085f7ba078e6d16e6c75c6",

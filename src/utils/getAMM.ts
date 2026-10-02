@@ -1,4 +1,4 @@
-import { amms } from "../amms";
+import { amms, retiredAmms } from "../amms";
 
 type GetAMMParams = {
   chainId: number;
@@ -7,14 +7,17 @@ type GetAMMParams = {
 
 export const getAMM = ({ address, chainId }: GetAMMParams) => {
   const ammsByChain = amms[chainId as keyof typeof amms];
-
-  if (!ammsByChain) return null;
-
-  const ammData = ammsByChain.find(
+  const ammData = ammsByChain?.find(
     (amm) => amm.address.toLowerCase() === address.toLowerCase()
   );
 
-  return ammData || null;
+  return (
+    ammData ||
+    retiredAmms[chainId]?.find(
+      (amm) => amm.address.toLowerCase() === address.toLowerCase()
+    ) ||
+    null
+  );
 };
 
 export const getAMMs = ({ chainId }: Omit<GetAMMParams, "address">) => {
@@ -24,3 +27,6 @@ export const getAMMs = ({ chainId }: Omit<GetAMMParams, "address">) => {
 
   return ammsByChain;
 };
+
+export const getRetiredAMMs = ({ chainId }: Omit<GetAMMParams, "address">) =>
+  retiredAmms[chainId] ?? [];
