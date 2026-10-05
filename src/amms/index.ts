@@ -32,7 +32,7 @@ export const amms: Record<number, AMM[]> = {
       token1: tokens[4663].STONKBROKER,
       principleSymbol: "STONKBROKER",
       quoteSymbol: "USD",
-      isMemePair: true,
+      isMemePair: false,
     },
     {
       chainId: RH_CHAIN_ID,
@@ -47,7 +47,7 @@ export const amms: Record<number, AMM[]> = {
       token1: tokens[4663].USDG,
       principleSymbol: "AI",
       quoteSymbol: "USD",
-      isMemePair: true,
+      isMemePair: false,
     },
     {
       chainId: RH_CHAIN_ID,
@@ -62,7 +62,7 @@ export const amms: Record<number, AMM[]> = {
       token1: tokens[4663].BONER,
       principleSymbol: "BONER",
       quoteSymbol: "USD",
-      isMemePair: true,
+      isMemePair: false,
     },
   ],
   146: [

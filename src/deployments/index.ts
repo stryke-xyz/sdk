@@ -56,7 +56,7 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
       openSettlement: "0xa53b8aabdadf2b3a329355c473be46faddd75f88",
       addLiquidityRouter: "0x3333276a73a826ac18374496d06ee564706421e5",
       multiSwapRouter: "0xec6fbc7935307529bd101ca0e08237184a970c8a",
-      onSwapReceiver: "0x26dAe4850D151f215aBf8f7B901f1BCbD6fF02F5",
+      onSwapReceiver: "0x26Dae4850D151f215aBF8F7b901f1Bcbd6Ff02f5",
       swapRouterSwapper: "0x182130d289658426ee6101a1597f392c9c8efd6d",
       swapRouter: "0xcaf681a66d020601342297493863e78c959e5cb2",
       merkleFeeDistributor: "0x2D1D09E62De6C8BFFb31F0836406d545740507c2",

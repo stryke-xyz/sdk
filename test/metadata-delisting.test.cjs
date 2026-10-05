@@ -29,3 +29,15 @@ assert.deepEqual(sdk.getRetiredAMMs({ chainId: 999999 }), []);
 assert.equal(sdk.getMarket({ chainId: 999999, address: marketAddress }), null);
 assert.equal(sdk.getAMM({ chainId: 999999, address: poolAddress }), null);
 console.log('metadata delisting tests passed');
+
+// Product-confirmed classification: these Robinhood assets use token prices, not meme market caps.
+for (const symbol of ["STONKBROKER", "AI", "BONER"]) {
+  const market = sdk.getMarkets(4663).find(m => m.principleSymbol === symbol);
+  assert(market);
+  assert.equal(market.primeAmm.isMemePair, false, symbol);
+  for (const amm of market.amms) {
+    assert.equal(amm.isMemePair, false, symbol);
+    assert.equal(sdk.getAMM({chainId: 4663, address: amm.address}).isMemePair, false);
+  }
+}
+assert.equal(sdk.getAMMs({chainId: 42161}).find(a => a.principleSymbol === "BOOP").isMemePair, true);
