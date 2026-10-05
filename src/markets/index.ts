@@ -33,7 +33,7 @@ export const markets: Record<number, Market[]> = {
     },
     {
       chainId: 4663,
-      address: "0x9e7e0341b64FC1990f960AD493BbAAd80400f75A",
+      address: "0x9e7e0341b64FC1990f960Ad493BbAAd80400f75a",
       amms: [ROBINHOOD_AI_USDG_AMM],
       baseToken: tokens[4663].AI,
       quoteToken: tokens[4663].USDG,

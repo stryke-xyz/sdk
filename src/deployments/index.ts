@@ -66,7 +66,7 @@ export const deployments: Partial<Record<number, ChainDeployment>> = {
       "0x94216dD7998FfC807175740398e06Fa9F067B042",
       // Keep indexing this retired market so existing positions and history remain available.
       "0x0E21d9DCc57DC36eF8B7231024B99309fB88E624",
-      "0x9e7e0341b64FC1990f960AD493BbAAd80400f75A",
+      "0x9e7e0341b64FC1990f960Ad493BbAAd80400f75a",
       "0x97ab715d7861b535d2085f7ba078e6d16e6c75c6",
     ],
   },
