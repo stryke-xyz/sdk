@@ -1,3 +1,16 @@
+/** Optional metadata supplied by APIs backed by the corrected Prism schema. */
+export type OptionLegMetadata = {
+  /** Contract array position. Keep completed zero-liquidity entries in place. */
+  opTickArrayIndex?: number;
+  /** Original liquidity in exact base units, never a JSON number. */
+  originalLiquidity?: string;
+  /** Funding lineage IDs are decimal strings; legacy/unresolved rows may be null. */
+  rootOptionId?: string | null;
+  rootOpTickArrayIndex?: number | null;
+  parentOptionId?: string | null;
+  originalOpTickArrayLen?: number | null;
+};
+
 export type Api = {
   "v1/deposit/earned": {
     type: string;
@@ -44,14 +57,16 @@ export type Api = {
     sizeUsd: number;
     strike: number;
     tokenId: string;
-    opTicks: {
+    /** Contract leg count, including completed legs. Absent on older API versions. */
+    opTickArrayLen?: number;
+    opTicks: ({
       tickLower: number;
       tickUpper: number;
       pool: string;
       hook: string;
       handler: string;
       liquidity: string;
-    }[];
+    } & OptionLegMetadata)[];
   }[];
   "v1/options/assemble": {
     market: string;
