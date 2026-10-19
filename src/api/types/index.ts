@@ -1,3 +1,17 @@
+/** Raw token amounts are base-unit decimal strings, never floating point. */
+export type ClaimHistoryResponse = {
+  items: {
+    action: "claim";
+    chainId: number;
+    transactionHash: string;
+    blockNumber: string;
+    date: number;
+    tokens: { address: string; amount: string; decimals: number | null; symbol: string | null }[];
+  }[];
+  nextCursor: string | null;
+  coverage: { fromBlock: string; throughBlock: string; throughTimestamp: number; distributors: string[]; status: "indexed" };
+};
+
 /** Optional metadata supplied by APIs backed by the corrected Prism schema. */
 export type OptionLegMetadata = {
   /** Contract array position. Keep completed zero-liquidity entries in place. */
@@ -12,6 +26,7 @@ export type OptionLegMetadata = {
 };
 
 export type Api = {
+  "v1/deposit/claim-history": ClaimHistoryResponse;
   "v1/deposit/earned": {
     type: string;
     pool: string;
